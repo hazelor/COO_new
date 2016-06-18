@@ -1,0 +1,55 @@
+{%extends "base.html" %}
+{% block metadata%}
+<link rel="stylesheet" type="text/css" media="screen" href="/static/css/preview_app.css">
+<script src="/static/js/charts_app.js"></script>
+<script src="/static/js/preview_app.js"></script>
+<!--<script src="/static/js/data_show.js"></script>-->
+<script src="/static/js/chart/highcharts.js"></script>
+<script src="/static/js/chart/modules/exporting.js"></script>
+<script src="/static/js/chart/themes/grid.js"></script>
+{%end%}
+{%block title%}采集数据{%end%}
+
+{%block content%}
+<div class="panel panel-default">
+    <div class="panel-heading">设备选择</div>
+    <div class="panel-body">
+        <div class="row col-lg-8">
+            <div class="col-lg-8">
+                <div class="input-group">
+                    <span class="input-group-addon">设备
+                    </span>
+                    <select class="combobox form-control" id="sel_device" value="{{sel_dev.id}}" onchange="on_selected_device_change()">
+                    {%for dev in devices%}
+                        <option value="{{dev.id}}">{{dev.location}}</option>
+                    {%end%}
+                    </select>
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div>
+        <div class="row col-lg-8" >
+                <div class="col-lg-8">
+                    <div class="input-group">
+                        <span class="input-group-addon">气室
+                        </span>
+                            <select class="combobox form-control" id="sel_chamber" value="{{sel_owner}}">
+                            {%for owner in owners%}
+                                <option value="{{owner}}">{{owner}}</option>
+                            {%end%}
+                        </select>
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+            </div>
+    </div>
+
+</div>
+<div class="input-group">
+    <input type="text"  class="form-control btn btn-primary" role="button" value="确定" onclick="on_selected_change()">
+</div><!-- /input-group -->
+{% include device_col_data.html %}
+    <div>
+        <div class="LoadingBg"></div>
+        <div class="Loading_message"></div>
+        <div class="LoadingImg"></div>
+    </div>
+{%end%}
