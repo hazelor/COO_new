@@ -54,6 +54,7 @@
             {'name':'传感器校准值','unit':'ppm','type_id':'carlibrate_value','owner':'气室1','start_pos':71},
             {'name':'风速','unit':'m/s','type_id':'wind_speed','owner':'气室1','start_pos':89},
 
+            {'name':'对照温度','unit':'摄氏度','type_id':'compared_temperature','owner':'气室6','start_pos':91},
         ]
     },
     {
@@ -63,6 +64,8 @@
             {'name':'二氧化碳测量浓度-实时','unit':'ppm','type_id':'co2_measured_concentration','owner':'气室8','start_pos':3},
             {'name':'空气温度','unit':'摄氏度','type_id':'air_temperature','owner':'气室8','start_pos':21},
             {'name':'空气湿度','unit':'%','type_id':'air_humility','owner':'气室8','start_pos':31},
+            {'name':'土壤温度','unit':'摄氏度','type_id':'soil_temperature','owner':'气室8','start_pos':41},
+            {'name':'土壤湿度','unit':'%','type_id':'soil_humility','owner':'气室8','start_pos':45},
             {'name':'二氧化碳测量浓度20s均值','unit':'ppm','type_id':'co2_20s_measured_concentration','owner':'气室8','start_pos':53},
             {'name':'传感器校准值','unit':'ppm','type_id':'carlibrate_value','owner':'气室8','start_pos':63},
             {'name':'目标差值','unit':'ppm','type_id':'target_diff_value','owner':'气室8','start_pos':73},
@@ -93,8 +96,6 @@
             {'name':'二氧化碳测量浓度-实时','unit':'ppm','type_id':'co2_measured_concentration','owner':'气室11','start_pos':15},
             {'name':'空气温度','unit':'摄氏度','type_id':'air_temperature','owner':'气室11','start_pos':27},
             {'name':'空气湿度','unit':'%','type_id':'air_humility','owner':'气室11','start_pos':37},
-            {'name':'土壤温度','unit':'摄氏度','type_id':'soil_temperature','owner':'气室10','start_pos':41},
-            {'name':'土壤湿度','unit':'%','type_id':'soil_humility','owner':'气室10','start_pos':45},
             {'name':'二氧化碳测量浓度20s均值','unit':'ppm','type_id':'co2_20s_measured_concentration','owner':'气室11','start_pos':59},
             {'name':'传感器校准值','unit':'ppm','type_id':'carlibrate_value','owner':'气室11','start_pos':69},
             {'name':'目标差值','unit':'ppm','type_id':'target_diff_value','owner':'气室11','start_pos':79},
@@ -111,7 +112,7 @@
             {'name':'传感器校准值','unit':'ppm','type_id':'carlibrate_value','owner':'自由大气','start_pos':71},
             {'name':'风速','unit':'m/s','type_id':'wind_speed','owner':'自由大气','start_pos':89},
 
-            {'name':'对照温度','unit':'摄氏度','type_id':'compared_temperature','owner':'气室14','start_pos':91},
+            {'name':'对照温度','unit':'摄氏度','type_id':'compared_temperature','owner':'气室12','start_pos':91},
         ]
     }
 ] 

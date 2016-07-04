@@ -115,9 +115,9 @@ class data_history_query_handler(base_handler):
         else:
             dev = Device.get(dev_id)
             datas_info = DataParser.get_instance().get_data_types(dev.dev_type, owner)
-            print "tables:---------",datas_info
+            #print "tables:---------",len(tables),start_time, end_time, tables
             reses = []
             for di in datas_info:
-                print di['type_id']
+                #print di['type_id']
                 reses.append(self.get_data_info(tables, di['type_id'], dev_id, di['owner'], start_time, end_time))
             self.write(json.dumps(reses))

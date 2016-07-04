@@ -24,7 +24,7 @@ function on_selected_change(){
     var date = new Date()
     var end_time = date.pattern("yyyy-MM-dd hh:mm");
     var date_milliseconds = date.getTime();
-    date_milliseconds -= 1000*60*19;
+    date_milliseconds -= 1000*60*59;
     date = new Date(date_milliseconds);
     var start_time = date.pattern("yyyy-MM-dd hh:mm");
     //var chart = $('#container').highcharts()
@@ -57,7 +57,7 @@ function on_selected_change(){
         $.ajax({
                 url:'history/query',
                 type:'GET',
-                timeout: 2000,
+                timeout: 20000,
                 dataType:'text',
                 data:{'dev_id':$('#sel_device').children('option:selected').attr('value'),
                       'owner':$('#sel_chamber').children('option:selected').attr('value'),

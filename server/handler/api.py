@@ -23,7 +23,7 @@ class api_data_handler(base_handler):
             r=redis.Redis()
             r.set("col_datas_%s"%(device_mac), data_content)
             #get the last table in redis and if there is not a record in redis and get the newest record in the table map
-            index = r.get("last_table_index")
+            index = r.get("last_data_table_index")
             if not index:
                 index = Data_Table_Map.get_last_table_index()
             print "last index:", index

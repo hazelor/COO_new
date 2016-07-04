@@ -164,7 +164,7 @@ class Data_Table_Map(Model):
         r = redis.Redis()
         dt = Data()
         dt.create_table(sub_name = str(index))
-        r.set("last_table_index",index)
+        r.set("last_data_table_index",index)
         new_table = Data_Table_Map()
         new_table.end_time = time.time()
         new_table.index = index
@@ -174,7 +174,7 @@ class Data_Table_Map(Model):
 
     @classmethod
     def get_tables(cls, start_time, end_time):
-        return cls.find_by('where start_time<? or end_time>?', end_time, start_time)
+        return cls.find_by('where start_time<? and end_time>?', end_time, start_time)
 
      
 
