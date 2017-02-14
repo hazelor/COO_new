@@ -12,9 +12,9 @@ import random
 
 class serialController(CountDownTimer):
     def __init__(self, seconds, start_pos, data_num):
-        #self.ser = self.init_serial_port()
-        #self.ser = self.open_serial_port(self.ser)
-        self.ser = ""
+        self.ser = self.init_serial_port()
+        self.ser = self.open_serial_port(self.ser)
+        #self.ser = ""
         self.duration = seconds
         self.start_pos = start_pos
         self.data_num = data_num
@@ -149,9 +149,9 @@ class serialController(CountDownTimer):
 
         command = serialController.form_read_command(1, 3, start_pos, num_data*2)
         hexer = serialController.int_array_to_string(command).decode("hex")
-        #ser.write(hexer)
-        #ans = ser.readall()
-        ans = []
+        ser.write(hexer)
+        ans = ser.readall()
+        print ans
         serialController.construct_datas(ans, num_data)
 
     @classmethod
@@ -161,16 +161,16 @@ class serialController(CountDownTimer):
         c_res = {}
         c_res['mac'] = get_mac_address()
         c_res['data_content']={}
-        c_res['data_content']['date'] = time.time()
+        c_res['data_content']['date'] = int(time.time())
         c_res['data_content']['content'] = []
         try:
             for i in range(num_data):
-                c_res['data_content']['content'].append(random.random())
-            #    c_res['content'].append(bytes_to_float(ans, i*4+start_pos))
+            #    c_res['data_content']['content'].append(random.random())
+                c_res['data_content']['content'].append(bytes_to_float(ans, i*4+start_pos))
             print c_res
             DataPool.get_instance().push_data(c_res)
-        except:
-            pass
+        except Exception as e:
+            print e
 
 
 if __name__ == '__main__':

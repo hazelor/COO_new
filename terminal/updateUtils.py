@@ -27,6 +27,7 @@ class updateController(CountDownTimer):
 
     def update_data(self, c_data):
         url = "http://{0}:{1}{2}".format(SERVER_URL, UPDATE_PORT, API_DATACHANNEL_URL)
+        print url
         j_data = json.dumps(c_data)
         req = urllib2.Request(url, j_data)
         try:

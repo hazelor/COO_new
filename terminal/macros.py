@@ -9,7 +9,7 @@ ISOTIMEFORMAT = "%Y-%m-%d-%H-%M-%S"
 
 
 #SERVER_URL = "52.32.13.119"
-SERVER_URL = "localhost"
+SERVER_URL = "www.thcreate.com"
 UPDATE_PORT = "8080"
 HOST_ADDRESS = "123.57.60.239"
 HOST_MQTT_PORT = 1883
@@ -19,7 +19,7 @@ API_DATACHANNEL_URL = "/api/data"
 API_CTRL_URL = "/api/ctrl"
 
 
-SERIAL_PORT_NAME = '/dev/ttyS3'
+SERIAL_PORT_NAME = '/dev/ttyAMA0'
 SERIAL_PORT_BAUD = 9600
 SERIAL_PORT_TIMEOUT = 0.5
 

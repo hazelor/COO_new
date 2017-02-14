@@ -97,7 +97,7 @@ def bytes_to_int(buf, offset):
 
 
 def bytes_to_float(buf, offset):
-    return struct.unpack_from(">f", buf, offset)[0]
+    return int(struct.unpack_from(">f", buf, offset)[0]*100.0)/100.0
 
 def float_to_bytes(value):
     return struct.pack(">f",value)
